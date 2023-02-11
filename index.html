@@ -35,8 +35,8 @@
                             <img :src="pao[0]">
                             <img :src="alface">
                             <img :src="ketchup">
-                            <img :src="maionese">
                             <img :src="mostarda">
+                            <img :src="maionese">
                             <img :src="hamburguer">
                             <img :src="pao[1]">
                         </div>
@@ -130,8 +130,8 @@
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" value="suina" v-model="inputHamburguer">
-                                        <label class="form-check-label">Suína
+                                        <input class="form-check-input" type="radio" value="soja" v-model="inputHamburguer">
+                                        <label class="form-check-label">Soja
                                         </label>
                                     </div>
                                 </div>
@@ -189,7 +189,16 @@
                     return 'imagens/padrao/molho.png'
                 },
                 hamburguer() {
-                    return 'imagens/padrao/hamburguer.png'
+                    switch (this.inputHamburguer) {
+                        case 'bovino':
+                            return 'imagens/bovino.png'
+                        case 'frango':
+                            return 'imagens/frango.png'
+                        case 'soja':
+                            return 'imagens/soja.png'
+                        default: return 'imagens/padrao/hamburguer.png'
+                    }
+
                 }
             }
         })
