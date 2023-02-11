@@ -97,7 +97,7 @@
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="mostrda" v-model="inputMolhos">
+                                        <input class="form-check-input" type="checkbox" value="mostarda" v-model="inputMolhos">
                                         <label class="form-check-label">
                                             Mostarda
                                         </label>
@@ -177,6 +177,9 @@
                     return 'imagens/padrao/molho.png'
                 },
                 maionese() {
+                    if (this.inputMolhos.includes('mostarda')) {
+                        return 'imagens/mostarda.png'
+                    }
                     return 'imagens/padrao/molho.png'
                 },
                 mostarda() {
