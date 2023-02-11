@@ -50,14 +50,15 @@
                             <div class="card">
                                 <div class="card-header">TIPO DO PAO</div>
                                 <div class="card-body">
+                                    {{inputTipopao}}
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio">
+                                        <input class="form-check-input" type="radio" value="gergelim" v-model="inputTipopao">
                                         <label class="form-check-label">Gergelim
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio">
-                                        <label class="form-check-label">Australiana
+                                        <input class="form-check-input" type="radio" value="australiano" v-model="inputTipopao">
+                                        <label class="form-check-label">Australiano
                                         </label>
                                     </div>
                                 </div>
@@ -72,7 +73,7 @@
                                 <div class="card-header">SALADAS</div>
                                 <div class="card-body">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox">
+                                        <input class="form-check-input" type="checkbox" value="alface" v-model="inputSalda">
                                         <label class="form-check-label">
                                             Alface
                                         </label>
@@ -143,9 +144,22 @@
     <script>
         const vm = new Vue({
             el: '#app',
+            data: {
+                inputTipopao: '',
+                inputSalada: [],
+                inputMolhos: [],
+                inputHamburguer: ''
+            },
             computed: {
                 pao() {
-                    return ['imagens/padrao/pao_superior.png', 'imagens/padrao/pao_inferior.png']
+                    switch (this.inputTipopao) {
+                        case 'gergelim':
+                            return ['imagens/pao_gergelim_superior.png', 'imagens/pao_gergelim_inferior.png']
+                        case 'australiano':
+                            return ['imagens/pao_australiano_superior.png', 'imagens/pao_australiano_inferior.png']
+                        default: return ['imagens/padrao/pao_superior.png', 'imagens/padrao/pao_inferior.png']
+                    }
+
                 },
                 alface() {
                     return ['imagens/padrao/alface.png']
