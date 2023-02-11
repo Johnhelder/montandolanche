@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -18,34 +18,36 @@
 
 <body>
     <!-- As a heading -->
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar navbar-light bg-light">
         <div class="container">
-            <span class="navbar-brand mb-0 h1">Navbar</span>
+            <span class="navbar-brand mb-0 h1">Monte o seu Lanche</span>
         </div>
     </nav>
 
     <div class="container">
+
         <div id="app">
             <div class="row">
                 <div class="col-md-6">
-                    <!--Tipo de pão-->
+                    Imagens do lanche
+
+                </div>
+                <div class="col-md-6">
+                    Inputs
+                    <!--TIPO DO PAO-->
                     <div class="row mt-2">
                         <div class="col">
                             <div class="card">
-                                <div class="card-header">
-                                    TIPO DO PÃO
-                                </div>
+                                <div class="card-header">TIPO DO PAO</div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio">
-                                        <label class="form-check-label">
-                                            Gergelim
+                                        <label class="form-check-label">Gergelim
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio">
-                                        <label class="form-check-label">
-                                            Australiano
+                                        <label class="form-check-label">Australiana
                                         </label>
                                     </div>
                                 </div>
@@ -53,13 +55,11 @@
                         </div>
                     </div>
 
-                    <!--Saladas-->
+                    <!--SALADAS-->
                     <div class="row mt-2">
                         <div class="col">
                             <div class="card">
-                                <div class="card-header">
-                                    SALADAS
-                                </div>
+                                <div class="card-header">SALADAS</div>
                                 <div class="card-body">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox">
@@ -71,13 +71,11 @@
                             </div>
                         </div>
                     </div>
-                    <!--Molhos-->
+                    <!--MOLHOS-->
                     <div class="row mt-2">
                         <div class="col">
                             <div class="card">
-                                <div class="card-header">
-                                    MOLHOS
-                                </div>
+                                <div class="card-header">MOLHOS</div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox">
@@ -101,30 +99,25 @@
                             </div>
                         </div>
                     </div>
-                    <!--Tipo hambúrguer-->
+                    <!--TIPO HAMBÚRGUER-->
                     <div class="row mt-2">
                         <div class="col">
                             <div class="card">
-                                <div class="card-header">
-                                    TIPO DE HAMBÚGUER
-                                </div>
+                                <div class="card-header">TIPO DE HAMBÚRGUER</div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio">
-                                        <label class="form-check-label">
-                                            Bovino
+                                        <label class="form-check-label">Bovino
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio">
-                                        <label class="form-check-label">
-                                            Frango
+                                        <label class="form-check-label">Frango
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio">
-                                        <label class="form-check-label">
-                                            Suína
+                                        <label class="form-check-label">Suína
                                         </label>
                                     </div>
                                 </div>
@@ -133,8 +126,10 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
+
     <script>
         const vm = new Vue({
             el: '#app'
