@@ -140,7 +140,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col d-flex justify-content-end">
-                            <button type="button" class="btn btn-primary">Fazer pedido</button>
+                            <button type="button" class="btn btn-primary" @click="fazerPedido">Fazer pedido</button>
                         </div>
                     </div>
                 </div>
@@ -204,6 +204,15 @@
                         default: return 'imagens/padrao/hamburguer.png'
                     }
 
+                }
+            },
+            methods: {
+                fazerPedido() {
+                    if (this.inputTipopao && this.inputHamburguer) {
+                        this.etapa = 2
+                    } else {
+                        alert('Você precisa selecionar no mínimo um pão e um hambúerguer')
+                    }
                 }
             }
         })
