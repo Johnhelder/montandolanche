@@ -166,11 +166,32 @@
                     <div class="row mt-2">
                         <div class="col d-flex justify-content-between">
                             <button type="button" class="btn btn-warning" @click="etapa -= 1">Voltar para o lanche</button>
-                            <button type="button" class="btn btn-success">Confirmar</button>
+                            <button type="button" class="btn btn-success" @click="confirmarPedido()">Confirmar</button>
                         </div>
                     </div>
                 </div>
 
+                <div class="col-md-6" v-if="etapa == 3">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">PEDIDO CONFIRMADO</div>
+
+                                <div class="card-body">
+                                    <P>Agora é só aguardar 10 minutinhos!</P>
+                                    <p>Vamos chamar vc em breve</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col d-flex justify-content-between">
+                            <button type="button" class="btn btn-primary">Repetir pedido</button>
+                            <button type="button" class="btn btn-success">Novo pedido</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -240,6 +261,13 @@
                             this.etapa = 2
                         } else {
                             alert('Você precisa selecionar no mínimo um pão e um hambúerguer')
+                        }
+                    },
+                    confirmarPedido() {
+                        if (this.inputNome && this.inputEndereco) {
+                            this.etapa = 3
+                        } else {
+                            alert('Você precisa informar o seu nome e endereço')
                         }
                     }
                 }
