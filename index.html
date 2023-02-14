@@ -205,7 +205,8 @@
                     inputHamburguer: '',
                     etapa: 1,
                     inputNome: '',
-                    inputEndereco: ''
+                    inputEndereco: '',
+                    novoPedidoAssincrono: null
                 },
                 computed: {
                     pao() {
@@ -266,6 +267,7 @@
                     confirmarPedido() {
                         if (this.inputNome && this.inputEndereco) {
                             this.etapa = 3
+                            this.novoPedidoAssincrono = setTimeout(() => this.novoPedido(), 7000)
                         } else {
                             alert('Você precisa informar o seu nome e endereço')
                         }
@@ -278,6 +280,13 @@
                         this.inputHamburguer = ''
                         this.inputNome = ''
                         this.inputEndereco = ''
+                    }
+                },
+                watch: {
+                    etapa(novoValor) {
+                        if (novoValor == 1) {
+                            clearTimeout(this.novoPedidoAssincrono)
+                        }
                     }
                 }
             })
